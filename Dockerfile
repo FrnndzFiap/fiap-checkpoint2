@@ -10,11 +10,11 @@ RUN mvn clean package
 
 FROM eclipse-temurin:18-jre-alpine
 
-RUN mkdir /opt/app
+RUN mkdir /opt/checkpoint2
 
-COPY --from=build  /opt/app/target/app.jar /opt/app/app.jar
+COPY --from=build  /opt/checkpoint2/target/app.jar /opt/checkpoint2/app.jar
 
-WORKDIR /opt/app
+WORKDIR /opt/checkpoint2
 
 ENV PROFILE=dev
 
